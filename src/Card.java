@@ -48,7 +48,8 @@ public class Card implements Comparator<Card> {
     }
 
     //print method
-    public String Print() {
+    @Override
+    public String toString() {
         return(rank + " of " + suit);
     }
 }
