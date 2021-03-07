@@ -15,11 +15,12 @@ public class Deck {
     public void populateDeck() {
         for (int i = 0; i < 13; i++) {
             for (int j = 0; j < 4; j++) {
-                Card c = new Card();
-                c[j] = suits[j];
-                c[i] = ranks[i];
+                Card card = new Card(j,1);
+                cards.add(card);
             }
         }
+        arraySize = cards.size();
+        cardsLeft = arraySize;
     }
 
     public void shuffleDeck() {

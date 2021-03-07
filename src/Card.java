@@ -15,12 +15,13 @@ public class Card implements Comparator<Card> {
     private String suit;
 
     //default constructor
-    public Card() {
+    public Card(int j, int i) {
         rankNum = 0;
         suitNum = 0;
         rank = "none";
         suit = "none";
     }
+
     // alternate constructor
     public Card(String rank, String suit){
         this.suit = suit;
