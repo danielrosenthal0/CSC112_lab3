@@ -1,6 +1,6 @@
 import java.util.Comparator;
 
-public class Card implements Comparator<Card> {
+public class Card  {
     // ranks are ordered Ace-low and Queen-high
     private final String ranks[] ={"Ace","2","3","4","5","6","7","8","9","10","Jack","King","Queen"};
 
@@ -15,11 +15,11 @@ public class Card implements Comparator<Card> {
     private String suit;
 
     //default constructor
-    public Card() {
+    public Card(Card card) {
         rankNum = 0;
         suitNum = 0;
-        rank = "none";
-        suit = "none";
+        rank = card.rank;
+        suit = card.suit;
     }
 
     public Card(int i, int j) {
@@ -44,17 +44,24 @@ public class Card implements Comparator<Card> {
         }
     }
 
-    //comparator
-    @Override
-    public int compare(Card o1, Card o2) {
-        int num;
+    public int compare(Card userValue, Card compValue) {
 
-        num = Integer.compare(o1.rankNum, o2.rankNum);
-        if(num == 0)
-            num = Integer.compare(o1.suitNum, o2.suitNum);
-        return num;
+return 0;
     }
 
+    //comparator
+    public static class  cardCompare implements Comparator<Card> {
+        @Override
+        public int compare(Card o1, Card o2) {
+            int rankingCompare = Integer.compare(o1.rankNum, o2.rankNum);
+            int suitCompare = Integer.compare(o1.suitNum, o2.suitNum);
+            if (rankingCompare == 0) {
+                return ((suitCompare == 0) ? rankingCompare : suitCompare);
+            } else {
+                return rankingCompare;
+            }
+        }
+    }
     //print method
     @Override
     public String toString() {

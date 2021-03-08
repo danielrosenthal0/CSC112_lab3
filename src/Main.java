@@ -18,17 +18,17 @@ public class Main {
         Deck d1 = new Deck();
         d1.populateDeck();
 
-        System.out.println("test");
+        //System.out.println("test");
         while(play) {
             d1.shuffleDeck();
-            System.out.println("test2");
+            //System.out.println("test2");
 
             // assign values to computer and user
             compValue = d1.removeCard();
             userValue = d1.removeCard();
 
             // get user's bet
-            System.out.println( "Computer's value is "+ compValue);
+            System.out.println( "Computer's value is "+ compValue.toString());
             invalid = true;
             while(invalid) {
                 System.out.println( "Do you think your number is higher or lower? (H/L)");
@@ -49,7 +49,7 @@ public class Main {
             }
 
             // determine outcome
-            if((compValue.compare(userValue,compValue) < 1 && guessedHigher) || (compValue.compare(userValue,compValue) > 1 && !guessedHigher)) {
+            if((compValue.compare(compValue, userValue) > 1 && guessedHigher) || ((compValue.compare(compValue, userValue) < 1 && !guessedHigher))) {
                 System.out.println("Great! You're right:");
                 nWin++;
             } else if((compValue.compare(compValue,userValue) < 1 && guessedHigher) || (compValue.compare(compValue,userValue) > 1 && !guessedHigher)) {
