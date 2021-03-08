@@ -30,13 +30,15 @@ public class Deck {
     }
     //shuffle method
     public void shuffleDeck() {
+        System.out.println("1");
     ArrayList<Card> temp = new ArrayList <Card>();
-    while(!cards.isEmpty()) {
+    while(!temp.isEmpty()) {
+        System.out.println("1");
         int i = (int)(Math.random()*cards.size());
-        cards.add(cards.get(i));
+        temp.add(cards.get(i));
         cards.remove(i);
-
     }
+    cards = temp;
     }
 
     //remove card from deck method
