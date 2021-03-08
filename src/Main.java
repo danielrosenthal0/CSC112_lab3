@@ -78,6 +78,14 @@ public class Main {
 
     public static void main(String[] args) {
 
+//        Card c1 = new Card(12,3);
+//        Card c2 = new Card(12,3);
+//        System.out.println(c1.compare(c1,c2));
+//        Deck d1 = new Deck();
+//        d1.populateDeck();
+//        d1.printDeck();
+//        d1.removeDeck();
+
         new Main().run();
     }
 

@@ -15,11 +15,18 @@ public class Card implements Comparator<Card> {
     private String suit;
 
     //default constructor
-    public Card(int j, int i) {
+    public Card() {
         rankNum = 0;
         suitNum = 0;
         rank = "none";
         suit = "none";
+    }
+
+    public Card(int i, int j) {
+        rankNum = i;
+        suitNum = j;
+        rank = ranks[i];
+        suit = suits[j];
     }
 
     // alternate constructor
@@ -29,10 +36,10 @@ public class Card implements Comparator<Card> {
 
         for (int i = 0; i < 13; i++) {
             if (ranks[i] == rank) {
-                rankNum = i + 1;
+                rankNum = i;
             }
             if (suits[i] == suit) {
-                suitNum = i + 1;
+                suitNum = i;
             }
         }
     }
@@ -40,7 +47,7 @@ public class Card implements Comparator<Card> {
     //comparator
     @Override
     public int compare(Card o1, Card o2) {
-        int num = 0;
+        int num;
 
         num = Integer.compare(o1.rankNum, o2.rankNum);
         if(num == 0)
@@ -51,6 +58,7 @@ public class Card implements Comparator<Card> {
     //print method
     @Override
     public String toString() {
+
         return(rank + " of " + suit);
     }
 }
