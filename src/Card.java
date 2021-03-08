@@ -8,7 +8,7 @@ public class Card  {
     private final String suits[] = {"Clubs","Diamonds","Hearts","Spades"};
 
 
-
+//intializing variables
     private int rankNum;
     private int suitNum;
     private String rank;
@@ -22,6 +22,7 @@ public class Card  {
         suit = card.suit;
     }
 
+    //constructor based on integers of rank and suit
     public Card(int i, int j) {
         rankNum = i;
         suitNum = j;
@@ -43,9 +44,8 @@ public class Card  {
             }
         }
     }
-
+//compare method for comparator
     public int compare(Card userValue, Card compValue) {
-
 return 0;
     }
 

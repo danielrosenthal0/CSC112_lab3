@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Deck {
 
+    //initializing variables, setting size of deck and how many cards left
     private ArrayList<Card> cards=new ArrayList < Card >();
     private int arraySize = 52;
     private int cardsLeft = 52;
@@ -17,7 +18,7 @@ public class Deck {
                 cards.add(new Card(i,j));
             }
         }
-        //System.out.println(cards.size());
+        //updates how many cards left
         arraySize = cards.size();
         cardsLeft = arraySize- 1;
 
@@ -25,15 +26,13 @@ public class Deck {
     //print deck method for testing
     public void printDeck() {
         for (int i = 0; i < cards.size(); i++) {
-            //System.out.println(cards.get(i));
         }
     }
-    //shuffle method
+
+    //shuffle method, replaces a card for another card after randomly generating int
     public void shuffleDeck() {
-        //System.out.println("1");
     ArrayList<Card> temp = new ArrayList <Card>();
     while(!cards.isEmpty()) {
-        //System.out.println("1");
         int i = (int)(Math.random()*cards.size());
         temp.add(cards.get(i));
         cards.remove(i);
@@ -41,9 +40,8 @@ public class Deck {
     cards = temp;
     }
 
-    //remove card from deck method
+    //remove card from deck method, updates number of cards left
     public Card removeCard() {
-        //shuffleDeck();
         Card card = new Card(cards.get(0));
         cards.remove(0);
         cardsLeft--;
@@ -51,6 +49,7 @@ public class Deck {
 
     }
 
+    //add card method, checks
     public boolean addCard(Card card) {
         cardsLeft++;
         if (cardsLeft < 52) {
